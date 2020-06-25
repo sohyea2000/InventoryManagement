@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Inventory Management</string>
+    <string name="welcome_to_inventory_system">WELCOME TO INVENTORY SYSTEM</string>
+    <string name="login_as_admin">Login As Admin</string>
+    <string name="login_as_employee">LOGIN AS EMPLOYEE</string>
+    <string name="string_login_as_employee" />
+    <string name="welcome_to_admin_login">WELCOME TO ADMIN LOGIN</string>
+    <string name="enter_email">enter email</string>
+    <string name="enter_password">enter password</string>
+    <string name="login">login</string>
+    <string name="create_new_account">CREATE NEW ACCOUNT</string>
+    <string name="name1">NAME</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="scan_id_card">SCAN ID CARD</string>
+    <string name="employee_id">Employee ID</string>
+    <string name="new_user_signup">New User? Signup</string>
+    <string name="scan_product">SCAN PRODUCT</string>
+    <string name="barcode">BARCODE</string>
+    <string name="scan">SCAN</string>
+
+    <string name="string_submit" />
+    <string name="logout">LOGOUT</string>
+
+    <string name="todo">TODO</string>
+    <string name="submit">SUBMIT</string>
+    <string name="scan_code">SCAN CODE</string>
+    <string name="welcome_to_employee_login">WELCOME TO EMPLOYEE LOGIN</string>
+    <string name="product_name">PRODUCT NAME</string>
+    <string name="product_description">PRODUCT DESCRIPTION</string>
+    <string name="current_date">CURRENT DATE</string>
+    <string name="current_time">CURRENT TIME</string>
+
+    <string name="add_product">ADD PRODUCT</string>
+    <string name="hello_welcome_to_admin_page">HELLO!! WELCOME TO ADMIN PAGE</string>
+    <string name="what_do_you_want_to_do">WHAT DO YOU WANT TO DO?</string>
+
+    <string name="update_the_required_details">UPDATE THE REQUIRED DETAILS</string>
+
+
+    <string name="update">UPDATE</string>
+    <string name="add_new_employees">ADD NEW EMPLOYEES</string>
+    <string name="add_employee">ADD EMPLOYEE</string>
+    <string name="name">NAME</string>
+    <string name="gender">GENDER</string>
+    <string name="employee_idd">EMPLOYEE ID</string>
+    <string name="details_of_the_product">DETAILS OF THE PRODUCT</string>
+</resources>
