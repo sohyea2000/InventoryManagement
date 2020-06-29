@@ -34,6 +34,8 @@ public class ProductActivity extends AppCompatActivity {
         date = findViewById(R.id.current_date);
         time = findViewById(R.id.current_time);
     }
+    
+     //Scans the QR Code
     public void scanCode(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
@@ -53,6 +55,8 @@ public class ProductActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+    
+     //Admin adds a product to the company database
     public void addData(View view)
     {
         String str = code.getText().toString();
@@ -60,6 +64,8 @@ public class ProductActivity extends AppCompatActivity {
         String product_description = description.getText().toString();
         String current_date = date.getText().toString();
         String current_time = time.getText().toString();
+        
+        //adding a child to firebase database
         mDatabase = FirebaseDatabase.getInstance().getReference().child(str);
         HashMap<String,String> userMap = new HashMap<>();
 
