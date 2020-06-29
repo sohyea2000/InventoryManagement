@@ -19,11 +19,8 @@ public class WelcomeActivty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_activty);
-
-
-
-
-    }
+ }
+     //if employee wants to scan a product
     public void scanStart(View view)
     {
         Intent in = new Intent(WelcomeActivty.this,DisplayActivity.class);
@@ -31,7 +28,7 @@ public class WelcomeActivty extends AppCompatActivity {
 
     }
 
-
+// when worker wants to logout
     public void logoutEmp(View view)
     {
         Intent mainIntent = new Intent(WelcomeActivty.this,MainActivity.class);
