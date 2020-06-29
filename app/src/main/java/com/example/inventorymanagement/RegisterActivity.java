@@ -37,7 +37,11 @@ public class RegisterActivity extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         confirm_pass = findViewById(R.id.confirm_pass);
         Button sign_up = findViewById(R.id.sign_up);
+        
+         //initializing firebase authentication
         mAuth = FirebaseAuth.getInstance();
+        
+         //Registering new user on firebase authentication
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,18 +49,19 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = pass.getText().toString();
                 String confirmPass = confirm_pass.getText().toString();
                 final String display_name = nameText.getText().toString();
-                if(!TextUtils.isEmpty(display_name)||!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)||confirmPass.equals(password))
+                if(!TextUtils.isEmpty(display_name)||!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)||confirmPass.equals(password))//Checks whether e-mail or password is empty and whether password and confirm passwords are same
                 {
+                     //creating new user
                    mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
-                          if(task.isSuccessful())
+                          if(task.isSuccessful())//succesful registration
                           {
                               Toast.makeText(RegisterActivity.this,"Creating Account",Toast.LENGTH_LONG).show();
                               Intent mainIntent = new Intent(RegisterActivity.this,AdminActivity.class);
                               startActivity(mainIntent);
                           }
-                          else
+                          else// when e-mail or password is empty or if password and confirm password doesn't match
                           {
                               Toast.makeText(RegisterActivity.this,"THERE IS SOME ERROR",Toast.LENGTH_LONG).show();
                           }
