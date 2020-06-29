@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button adminButton = findViewById(R.id.adminButton);
         Button workButton = findViewById(R.id.workButton);
+        
+        //Gets executed when admin uses the app
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        
+         //Gets execute when worker uses the app
         workButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
