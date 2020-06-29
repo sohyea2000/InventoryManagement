@@ -42,6 +42,7 @@ public class WorkerLogin extends AppCompatActivity {
 
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
+        //gets executed after scanning of the employee id card
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +54,7 @@ public class WorkerLogin extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String value = Objects.requireNonNull(dataSnapshot.child("EMPLOYEE ID").getValue()).toString();
+                        //checks if employee id exists in the database
                         if(value.equals(id))
                         {
                             Intent intent = new Intent(WorkerLogin.this,WelcomeActivty.class);
@@ -69,7 +71,7 @@ public class WorkerLogin extends AppCompatActivity {
             }
         });
     }
-
+//Scans id card of the worker
     public void scanCode(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
