@@ -28,6 +28,8 @@ public class UpdateActivity extends AppCompatActivity {
         updateDate = findViewById(R.id.update_date);
         updateTime = findViewById(R.id.update_time);
     }
+    
+     //Scans code of the product which is to be updated
     public void scanCode(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
@@ -47,12 +49,13 @@ public class UpdateActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+    // updates the date of service and current time of service in the database
     public void updateDetails(View view){
         String str = barCode.getText().toString();
         String date = updateDate.getText().toString();
         String time = updateTime.getText().toString();
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
+     //changing value stored in a child in firebase database
         database.child(str).child("CURRENT DATE OF SERVICE").setValue(date);
         database.child(str).child("CURRENT TIME OF SERVICE").setValue(time);
         Intent intent = new Intent (UpdateActivity.this,AdminActivity.class);
