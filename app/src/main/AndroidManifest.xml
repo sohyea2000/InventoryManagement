@@ -20,8 +20,8 @@
         <activity android:name=".UserActivity" />
         <activity android:name=".AdminActivity" />
         <activity
-            android:name=".ProductActivity"
-            android:parentActivityName=".AdminActivity" />
+            android:name=".ProductActivity"/>
+            
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WorkerLogin" />
         <activity android:name=".AdminLogin" />
