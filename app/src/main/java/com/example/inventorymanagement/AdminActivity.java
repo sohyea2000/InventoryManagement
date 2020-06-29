@@ -17,6 +17,8 @@ public class AdminActivity extends AppCompatActivity {
         Button addProduct = findViewById(R.id.add_product);
         Button update = findViewById(R.id.updateButton);
         Button logout = findViewById(R.id.logoutBtn);
+        
+         //Gets executed when admin wants to add new employee
         addEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,6 +26,8 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
+        
+         //Gets executed when admin wants to add new product
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +35,8 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
+         //Gets executed when admin wants to change the details of the product
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +45,8 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         });
+        
+         //Gets executed when admin wants to logout
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
