@@ -43,7 +43,7 @@ public class DisplayActivity extends AppCompatActivity {
         time = findViewById(R.id.CurrentTime);
 
     }
-   //Scans QR Code to view details of the product
+
     public void scanProduct(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
@@ -63,16 +63,12 @@ public class DisplayActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-    
-     //Displaying the details of the product
     public void submitCode(View view)
     {
 
         String barcode = code.getText().toString();
        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(barcode);
-       
-        //Retrieving multiple data stored in firebase database
-        mRef.addValueEventListener(new ValueEventListener() {
+       mRef.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                Map<String,String> map = (Map<String, String>)dataSnapshot.getValue();

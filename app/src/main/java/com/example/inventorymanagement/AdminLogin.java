@@ -32,12 +32,11 @@ public class AdminLogin extends AppCompatActivity {
         Button login = findViewById(R.id.loginButton);
         adminmail = findViewById(R.id.adminMail);
         adminpass = findViewById(R.id.adminPass);
-        
         //initializing firebase authentication
         mAuth = FirebaseAuth.getInstance();
         Button signupButton = findViewById(R.id.createButton);
-        
-         //Gets executed when a user uses the app for the first time to create an account
+
+        //Gets executed when a user uses the app for the first time to create an account
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,8 +44,8 @@ public class AdminLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
-         //Gets executed when admin wants to login to the app
+
+        //Gets executed when admin wants to login to the app
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,8 +57,8 @@ public class AdminLogin extends AppCompatActivity {
                    mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
-                           
-                            //Gets executed when login is successful
+
+                           //Gets executed when login is successful
                            if(task.isSuccessful())
                            {
 
@@ -68,8 +67,8 @@ public class AdminLogin extends AppCompatActivity {
                                startActivity(mainIntent);
 
                            }
-                           
-                            //when e-mail or password doesnot match
+
+                           //when e-mail or password doesnot match
                            else
                            {
 
@@ -78,8 +77,8 @@ public class AdminLogin extends AppCompatActivity {
                        }
                    });
                 }
-                
-                 //when e-mail or password fields are empty
+
+                //when e-mail or password fields are empty
                 else
                 {
                     Toast.makeText(AdminLogin.this,"Email or Password is empty",Toast.LENGTH_LONG).show();

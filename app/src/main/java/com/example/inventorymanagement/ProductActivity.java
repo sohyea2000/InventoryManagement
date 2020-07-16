@@ -20,6 +20,7 @@ import java.util.HashMap;
 public class ProductActivity extends AppCompatActivity {
     private TextView code;
     private DatabaseReference mDatabase;
+    private DatabaseReference databaseReference;
     private EditText name;
     private EditText description;
     private EditText date;
@@ -34,8 +35,7 @@ public class ProductActivity extends AppCompatActivity {
         date = findViewById(R.id.current_date);
         time = findViewById(R.id.current_time);
     }
-    
-     //Scans the QR Code
+    //Scans the QR Code
     public void scanCode(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
@@ -55,8 +55,8 @@ public class ProductActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-    
-     //Admin adds a product to the company database
+
+    //Admin adds a product to the company database
     public void addData(View view)
     {
         String str = code.getText().toString();
@@ -64,17 +64,24 @@ public class ProductActivity extends AppCompatActivity {
         String product_description = description.getText().toString();
         String current_date = date.getText().toString();
         String current_time = time.getText().toString();
-        
+
         //adding a child to firebase database
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child(str);
         HashMap<String,String> userMap = new HashMap<>();
 
         userMap.put("PRODUCT NAME",product_name);
         userMap.put("PRODUCT DESCRIPTION",product_description);
-        userMap.put("CURRENT DATE OF SERVICE",current_date);
-        userMap.put("CURRENT TIME OF SERVICE",current_time);
+        userMap.put("DATE OF ISSUE",current_date);
+        userMap.put("DATE OF SUBMISSION",current_time);
         mDatabase.setValue(userMap);
         Intent in = new Intent(ProductActivity.this,AdminActivity.class);
         startActivity(in);
+
+       databaseReference = FirebaseDatabase.getInstance().getReference().child("PRODUCTS");
+        HashMap<String,String> user = new HashMap<>();
+
+        user.put("Product Name ",product_name+" : "+str);
+        databaseReference.setValue(user);
     }
 }

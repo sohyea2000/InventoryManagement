@@ -47,4 +47,10 @@
     <string name="gender">GENDER</string>
     <string name="employee_idd">EMPLOYEE ID</string>
     <string name="details_of_the_product">DETAILS OF THE PRODUCT</string>
+    <string name="product_name22">Product Name</string>
+    <string name="name22">Name</string>
+    <string name="employee_id22">Employee Id</string>
+    <string name="make_request22">MAKE REQUEST</string>
+    <string name="scan_id22">SCAN ID</string>
+    <string name="make_request12">MAKE REQUEST</string>
 </resources>

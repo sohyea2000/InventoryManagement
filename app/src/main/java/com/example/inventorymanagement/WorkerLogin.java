@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,7 +31,7 @@ public class WorkerLogin extends AppCompatActivity {
     private DatabaseReference workerDatabase;
 
 
-    private String id;
+    public String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class WorkerLogin extends AppCompatActivity {
 
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
+
         //gets executed after scanning of the employee id card
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +72,9 @@ public class WorkerLogin extends AppCompatActivity {
             }
         });
     }
-//Scans id card of the worker
+
+
+    //Scans id card of the worker
     public void scanCode(View view)
     {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);

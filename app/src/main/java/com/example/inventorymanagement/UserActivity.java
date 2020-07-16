@@ -18,7 +18,7 @@ public class UserActivity extends AppCompatActivity {
     private EditText empname;
     private EditText empgender;
     public EditText empId;
-    private Button addButton;
+    public static String name;
     public static String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +27,14 @@ public class UserActivity extends AppCompatActivity {
          empgender = findViewById(R.id.empGender);
          empId = findViewById(R.id.empId);
          empname = findViewById(R.id.employeeName);
-         addButton = findViewById(R.id.addEmp);
+         Button addButton = findViewById(R.id.addEmp);
          addButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  EmployeeId.empId = empId.getText().toString();
                   id = empId.getText().toString();
-                 String name = empname.getText().toString();
+                  EmployeeId.name = empname.getText().toString();
+                  name = empname.getText().toString();
                  String gender = empgender.getText().toString();
                  userDatabase = FirebaseDatabase.getInstance().getReference().child(id);
                  HashMap<String,String> userMap = new HashMap<>();
@@ -43,6 +44,7 @@ public class UserActivity extends AppCompatActivity {
                  userDatabase.setValue(userMap);
                  Intent intent = new Intent(UserActivity.this,AdminActivity.class);
                  startActivity(intent);
+                 finish();
              }
          });
     }
