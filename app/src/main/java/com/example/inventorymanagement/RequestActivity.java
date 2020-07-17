@@ -33,12 +33,12 @@ public class RequestActivity extends AppCompatActivity {
 
        // String empId = ra.empId;
         //String code = ra.procode;
-        usersList = findViewById(R.id.listRequest);
-        users = new ArrayList<String>();
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
-        usersList.setAdapter(adapter);
+        //usersList = findViewById(R.id.listRequest);
+        //users = new ArrayList<String>();
+        //adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
+        //usersList.setAdapter(adapter);
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Requests");
+        /*ref = FirebaseDatabase.getInstance().getReference().child("Requests");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -66,6 +66,6 @@ public class RequestActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
     }
 }
