@@ -24,22 +24,21 @@ public class RequestActivity extends AppCompatActivity {
     /*private ListView requestList;
     private ArrayList<String> requests ;
     private ArrayAdapter<String> requestAdapter ;*/
-    private DatabaseReference ref;
-   // MakeRequestActivity ra = new MakeRequestActivity();
+    private DatabaseReference reference21;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
 
-       // String empId = ra.empId;
-        //String code = ra.procode;
-        //usersList = findViewById(R.id.listRequest);
-        //users = new ArrayList<String>();
-        //adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
-        //usersList.setAdapter(adapter);
 
-        /*ref = FirebaseDatabase.getInstance().getReference().child("Requests");
-        ref.addChildEventListener(new ChildEventListener() {
+        usersList = findViewById(R.id.listRequest);
+        users = new ArrayList<String>();
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
+        usersList.setAdapter(adapter);
+
+        reference21 = FirebaseDatabase.getInstance().getReference().child("Requests");
+        reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
               String requestValue = dataSnapshot.getValue(String.class);
@@ -66,6 +65,6 @@ public class RequestActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });*/
+        });
     }
 }
