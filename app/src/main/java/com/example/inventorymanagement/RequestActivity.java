@@ -25,13 +25,13 @@ public class RequestActivity extends AppCompatActivity {
     private ArrayList<String> requests ;
     private ArrayAdapter<String> requestAdapter ;*/
     private DatabaseReference reference21;
-
+    private MakeRequestActivity ra ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
-
-
+         ra = new MakeRequestActivity();
+         String code = ra.procode;
         usersList = findViewById(R.id.listRequest);
         users = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
@@ -41,7 +41,7 @@ public class RequestActivity extends AppCompatActivity {
         reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-              String requestValue = dataSnapshot.getValue(String.class);
+              String requestValue = dataSnapshot.child(code).getValue(String.class);
               users.add(requestValue);
               adapter.notifyDataSetChanged();
             }
