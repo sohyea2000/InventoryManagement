@@ -22,13 +22,13 @@ public class UserProductActivity extends AppCompatActivity {
     private ArrayList<String> users;
     private ArrayAdapter<String> adapter;
     private DatabaseReference reference;
-    private DisplayActivity ab;
+    //private DisplayActivity ab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_product);
-        ab = new DisplayActivity();
-        String code = ab.barcode;
+        //ab = new DisplayActivity();
+        //String code = ab.barcode;
         usersList = findViewById(R.id.usersList);
         users = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
