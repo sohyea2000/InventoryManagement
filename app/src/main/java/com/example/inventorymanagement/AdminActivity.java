@@ -16,7 +16,7 @@ public class AdminActivity extends AppCompatActivity {
         Button addEmployee = findViewById(R.id.add_employee);
         Button addProduct = findViewById(R.id.add_product);
         Button update = findViewById(R.id.updateButton);
-        Button logout = findViewById(R.id.logoutBtn);
+        Button viewButton = findViewById(R.id.viewBtn);
         
          //Gets executed when admin wants to add new employee
         addEmployee.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,7 @@ public class AdminActivity extends AppCompatActivity {
         });
         
          //Gets executed when admin wants to logout
-        logout.setOnClickListener(new View.OnClickListener() {
+        viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminActivity.this,MainActivity.class);
