@@ -13,11 +13,11 @@ import android.widget.Button;
 
 public class AdminActivity extends AppCompatActivity {
     private Toolbar mToolbar;
-   /* @Override
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
-    }*/
+    }
 
 
 
