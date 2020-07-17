@@ -1,13 +1,24 @@
 package com.example.inventorymanagement;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class AdminActivity extends AppCompatActivity {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +61,31 @@ public class AdminActivity extends AppCompatActivity {
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity.this,MainActivity.class);
+                Intent intent = new Intent(AdminActivity.this,UserProductActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.main_logout_button:
+                Intent in = new Intent(AdminActivity.this,MainActivity.class);
+                startActivity(in);
+
+                return true;
+            case R.id.main_request_button:
+                Intent intent = new Intent(AdminActivity.this,RequestActivity.class);
+                return true;
+            case R.id.get_button:
+                Intent intent1 = new Intent(AdminActivity.this,WelcomeActivty.class);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
 }
