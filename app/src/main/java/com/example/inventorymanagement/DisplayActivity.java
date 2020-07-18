@@ -11,8 +11,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -30,7 +33,7 @@ public class DisplayActivity extends AppCompatActivity {
     private TextView description;
     private  TextView date;
     private TextView time;
-
+    private EditText empName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +44,7 @@ public class DisplayActivity extends AppCompatActivity {
         description = findViewById(R.id.productDescription);
         date = findViewById(R.id.CurrentDate);
         time = findViewById(R.id.CurrentTime);
-
+        empName = findViewById(R.id.name);
     }
 
     public void scanProduct(View view)
@@ -65,7 +68,7 @@ public class DisplayActivity extends AppCompatActivity {
     }
     public void submitCode(View view)
     {
-
+         String name1 = empName.getText().toString();
         String barcode = code.getText().toString();
        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(barcode);
        mRef.addValueEventListener(new ValueEventListener() {
@@ -82,6 +85,10 @@ public class DisplayActivity extends AppCompatActivity {
                date.setText(pdate);
                String ptime = map.get("CURRENT TIME OF SERVICE");
                time.setText(ptime);
+               DatabaseReference myDatabase = FirebaseDatabase.getInstance().getReference().child("USERPRODUCT");
+               HashMap<String,String> map1 = new HashMap<>();
+               map1.put(barcode,pname+" : "+name1);
+               myDatabase.setValue(map1);
            }
 
            @Override
