@@ -13,8 +13,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RequestActivity extends AppCompatActivity {
 
@@ -25,24 +28,26 @@ public class RequestActivity extends AppCompatActivity {
     private ArrayList<String> requests ;
     private ArrayAdapter<String> requestAdapter ;*/
     private DatabaseReference reference21;
+    private DatabaseReference reference22;
     private MakeRequestActivity ra ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
-         ra = new MakeRequestActivity();
-         String code = ra.procode;
+        ra = new MakeRequestActivity();
+        String code = ra.procode;
+        String empCode = ra.empId;
         usersList = findViewById(R.id.listRequest);
         users = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
         usersList.setAdapter(adapter);
 
         reference21 = FirebaseDatabase.getInstance().getReference().child("Requests");
-        reference21.addChildEventListener(new ChildEventListener() {
+       reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String codes = code;
-              String requestValue = dataSnapshot.child(codes).getValue(String.class);
+
+              String requestValue = dataSnapshot.child(empCode).child(code).getValue(String.class);
               users.add(requestValue);
               adapter.notifyDataSetChanged();
             }
@@ -67,5 +72,6 @@ public class RequestActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
