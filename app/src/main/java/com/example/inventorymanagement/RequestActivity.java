@@ -46,8 +46,8 @@ public class RequestActivity extends AppCompatActivity {
        reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-              String requestValue = dataSnapshot.getValue(String.class);
+                Map<String,String> map = (Map<String, String>)dataSnapshot.getValue();
+                String requestValue = map.toString();
               users.add(requestValue);
               adapter.notifyDataSetChanged();
             }
