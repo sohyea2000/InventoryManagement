@@ -29,14 +29,14 @@ public class RequestActivity extends AppCompatActivity {
     private ArrayAdapter<String> requestAdapter ;*/
     private DatabaseReference reference21;
     private DatabaseReference reference22;
-    private MakeRequestActivity ra ;
+   public EmployeeId id ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
-        ra = new MakeRequestActivity();
-        String code = ra.procode;
-        String empCode = ra.empId;
+        id = new EmployeeId();
+       // String code = .procode;
+        String empCode = id.empId;
         usersList = findViewById(R.id.listRequest);
         users = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
