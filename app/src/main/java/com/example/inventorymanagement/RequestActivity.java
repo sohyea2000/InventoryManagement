@@ -41,7 +41,8 @@ public class RequestActivity extends AppCompatActivity {
         reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-              String requestValue = dataSnapshot.child(code).getValue(String.class);
+                String codes = code;
+              String requestValue = dataSnapshot.child(codes).getValue(String.class);
               users.add(requestValue);
               adapter.notifyDataSetChanged();
             }
