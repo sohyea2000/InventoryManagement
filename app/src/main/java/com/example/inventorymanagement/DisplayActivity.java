@@ -81,9 +81,9 @@ public class DisplayActivity extends AppCompatActivity {
                name.setText(pname);
                String pdescription = map.get("PRODUCT DESCRIPTION");
                description.setText(pdescription);
-               String pdate = map.get("CURRENT DATE OF SERVICE");
+               String pdate = map.get("DATE OF ISSUE");
                date.setText(pdate);
-               String ptime = map.get("CURRENT TIME OF SERVICE");
+               String ptime = map.get("DATE OF SUBMISSION");
                time.setText(ptime);
                DatabaseReference myDatabase = FirebaseDatabase.getInstance().getReference().child("USERPRODUCT");
                HashMap<String,String> map1 = new HashMap<>();
