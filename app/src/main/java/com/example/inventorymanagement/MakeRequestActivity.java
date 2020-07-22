@@ -24,7 +24,7 @@ public class MakeRequestActivity extends AppCompatActivity {
     private EditText product_name;
     private EditText product_code;
     private DatabaseReference databaseReference;
-    private int i = 1;
+    private String i = "a";
     String empId;
     String procode;
     @Override
@@ -47,9 +47,10 @@ public class MakeRequestActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)||!TextUtils.isEmpty(empId)){
                   databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests").child(empId);
                     HashMap<String,String> map = new HashMap<>();
-                    map.put(procode,proname+ " : "+ name);
+                    map.put(i,proname+ " : "+ name);
                     databaseReference.setValue(map);
                     Toast.makeText(MakeRequestActivity.this, "YOUR REQUEST HAS BEEN SENT", Toast.LENGTH_SHORT).show();
+                    i= i+1;
                 }
                 else {
                     Toast.makeText(MakeRequestActivity.this, "CHECK YOUR FORM", Toast.LENGTH_SHORT).show();
