@@ -48,7 +48,7 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-               Map<String,String> map = (Map<String, String>)dataSnapshot.getValue();
+               Map<String,String> map = (HashMap<String, String>)dataSnapshot.getValue();
                 String requestValue = map.toString();
               users.add(requestValue);
               adapter.notifyDataSetChanged();
