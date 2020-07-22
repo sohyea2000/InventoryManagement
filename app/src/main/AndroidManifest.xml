@@ -14,21 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplayActivity"
-            android:parentActivityName=".WelcomeActivty"/>
+        <activity android:name=".AllRequestActivity"></activity>
+        <activity
+            android:name=".DisplayActivity"
+            android:parentActivityName=".WelcomeActivty" />
         <activity android:name=".UpdateActivity" />
         <activity android:name=".UserActivity" />
         <activity android:name=".AdminActivity" />
-        <activity
-            android:name=".ProductActivity"/>
-            
+        <activity android:name=".ProductActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WorkerLogin" />
         <activity android:name=".AdminLogin" />
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".WelcomeActivty"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".WelcomeActivty" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,11 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MakeRequestActivity"></activity>
-        <activity android:name=".ViewProductActivity"></activity>
-        <activity android:name=".RequestActivity"></activity>
-        <activity android:name=".UserProductActivity"></activity>
-
+        <activity android:name=".MakeRequestActivity" />
+        <activity android:name=".ViewProductActivity" />
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".UserProductActivity" />
     </application>
 
 </manifest>
