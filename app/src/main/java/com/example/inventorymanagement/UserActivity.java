@@ -31,7 +31,7 @@ public class UserActivity extends AppCompatActivity {
          addButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 EmployeeId.empId = empId.getText().toString();
+                 EmployeeId.EmployeeId = empId.getText().toString();
                   id = empId.getText().toString();
                   EmployeeId.name = empname.getText().toString();
                   name = empname.getText().toString();
@@ -40,7 +40,7 @@ public class UserActivity extends AppCompatActivity {
                  HashMap<String,String> userMap = new HashMap<>();
                  userMap.put("NAME",name);
                  userMap.put("GENDER",gender);
-                 userMap.put("EMPLOYEE ID",id);
+                 userMap.put("EMPLOYEEID",id);
                  userDatabase.setValue(userMap);
                  Intent intent = new Intent(UserActivity.this,AdminActivity.class);
                  startActivity(intent);
