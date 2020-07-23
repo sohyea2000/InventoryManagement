@@ -22,7 +22,7 @@ public class MakeRequestActivity extends AppCompatActivity {
     private EditText employee_id;
     private EditText employee_name;
     private EditText product_name;
-    private EditText product_code;
+
     private DatabaseReference databaseReference;
     private String i = "a";
     String empId;
@@ -31,20 +31,20 @@ public class MakeRequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_request);
-        employee_id = findViewById(R.id.myId);
+
         employee_name = findViewById(R.id.empName);
         product_name = findViewById(R.id.proName);
-        product_code = findViewById(R.id.productCode);
+
         Button requestBtn = findViewById(R.id.make_request_btn);
         requestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = employee_name.getText().toString();
                 String proname = product_name.getText().toString();
-                 procode = product_code.getText().toString();
 
-                empId = employee_id.getText().toString();
-                if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)||!TextUtils.isEmpty(empId)){
+
+
+                if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)){
                   databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests");
                    databaseReference.push().setValue(proname+ " : "+name);
                     /*HashMap<String,String> map = new HashMap<>();
