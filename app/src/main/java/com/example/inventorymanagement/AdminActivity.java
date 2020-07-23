@@ -80,7 +80,7 @@ public class AdminActivity extends AppCompatActivity {
 
                 return true;
             case R.id.main_request_button:
-                Intent intent11 = new Intent(getApplicationContext(),AllRequestActivity.class);
+                Intent intent11 = new Intent(getApplicationContext(),RequestActivity.class);
                 startActivity(intent11);
 
                 return true;
