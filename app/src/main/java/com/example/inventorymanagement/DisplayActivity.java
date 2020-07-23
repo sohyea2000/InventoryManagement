@@ -78,13 +78,13 @@ public class DisplayActivity extends AppCompatActivity {
 
                assert map != null;
                String pname = map.get("PRODUCT NAME");
-               name.setText("Name : " +pname);
+               name.setText(pname);
                String pdescription = map.get("PRODUCT DESCRIPTION");
-               description.setText("Description" +pdescription);
+               description.setText(pdescription);
                String pdate = map.get("DATE OF ISSUE");
-               date.setText("Date Of Issue" +pdate);
+               date.setText(pdate);
                String ptime = map.get("DATE OF SUBMISSION");
-               time.setText("Date Of Submission" +ptime);
+               time.setText(ptime);
                DatabaseReference myDatabase = FirebaseDatabase.getInstance().getReference().child("USERPRODUCT");
                HashMap<String,String> map1 = new HashMap<>();
                map1.put(barcode,pname+" : "+name1);
