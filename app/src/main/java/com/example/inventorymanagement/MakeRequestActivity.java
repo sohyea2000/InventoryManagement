@@ -46,11 +46,12 @@ public class MakeRequestActivity extends AppCompatActivity {
                 empId = employee_id.getText().toString();
                 if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)||!TextUtils.isEmpty(empId)){
                   databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests");
-                    HashMap<String,String> map = new HashMap<>();
+                   databaseReference.push().setValue(proname+ " : "+name);
+                    /*HashMap<String,String> map = new HashMap<>();
                     map.put(i,proname+ " : "+ name);
-                    databaseReference.setValue(map);
+                    databaseReference.setValue(map);*/
                     Toast.makeText(MakeRequestActivity.this, "YOUR REQUEST HAS BEEN SENT", Toast.LENGTH_SHORT).show();
-                    i= i+1;
+                     i= i+1;
                 }
                 else {
                     Toast.makeText(MakeRequestActivity.this, "CHECK YOUR FORM", Toast.LENGTH_SHORT).show();
