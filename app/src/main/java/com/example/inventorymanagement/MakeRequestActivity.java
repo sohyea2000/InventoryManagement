@@ -45,7 +45,7 @@ public class MakeRequestActivity extends AppCompatActivity {
 
                 empId = employee_id.getText().toString();
                 if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)||!TextUtils.isEmpty(empId)){
-                  databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests").child(empId);
+                  databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests");
                     HashMap<String,String> map = new HashMap<>();
                     map.put(i,proname+ " : "+ name);
                     databaseReference.setValue(map);
