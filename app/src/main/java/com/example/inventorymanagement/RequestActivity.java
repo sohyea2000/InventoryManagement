@@ -43,7 +43,7 @@ public class RequestActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
         usersList.setAdapter(adapter);
 
-        reference21 = FirebaseDatabase.getInstance().getReference().child("Requests").child(empCode);
+        reference21 = FirebaseDatabase.getInstance().getReference().child("Requests");
        reference21.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
