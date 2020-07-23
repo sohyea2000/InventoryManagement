@@ -54,7 +54,7 @@ public class WorkerLogin extends AppCompatActivity {
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String value = Objects.requireNonNull(dataSnapshot.child("EMPLOYEE ID").getValue()).toString();
+                        String value = Objects.requireNonNull(dataSnapshot.child("EMPLOYEEID").getValue()).toString();
                         //checks if employee id exists in the database
                         if(value.equals(id))
                         {
