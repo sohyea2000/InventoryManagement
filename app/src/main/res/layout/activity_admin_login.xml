@@ -31,14 +31,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp">
+
             <EditText
                 android:id="@+id/adminMail"
-                android:hint="E-mail"
-                android:textSize="16sp"
-                android:inputType="number"
-                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
