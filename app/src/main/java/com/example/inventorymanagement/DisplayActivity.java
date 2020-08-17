@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -99,18 +100,20 @@ public class DisplayActivity extends AppCompatActivity {
        });
        String name2 = empName.getText().toString();
        String pname2 = name.getText().toString();
-       DatabaseReference mRef2 = FirebaseDatabase.getInstance().getReference().child("Requests").child(pname2+" : "+name2);
-      mRef2.addListenerForSingleValueEvent(new ValueEventListener() {
-          @Override
-          public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-              String clubkey = dataSnapshot.getKey();
-              Toast.makeText(DisplayActivity.this, clubkey, Toast.LENGTH_SHORT).show();
-          }
+        DatabaseReference mRef2 = FirebaseDatabase.getInstance().getReference();
+        Query refQuery = mRef2.child("Requests").orderByChild("autokey").equalTo(pname2+ " : "+name2);
+        refQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
+                    dataSnapshot1.getRef().removeValue();
+                }
+            }
 
-          @Override
-          public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-          }
-      });
+            }
+        });
     }
 }
