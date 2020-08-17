@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -96,5 +97,20 @@ public class DisplayActivity extends AppCompatActivity {
 
            }
        });
+       String name2 = empName.getText().toString();
+       String pname2 = name.getText().toString();
+       DatabaseReference mRef2 = FirebaseDatabase.getInstance().getReference().child("Requests").child(pname2+" : "+name2);
+      mRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+          @Override
+          public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+              String clubkey = dataSnapshot.getKey();
+              Toast.makeText(DisplayActivity.this, clubkey, Toast.LENGTH_SHORT).show();
+          }
+
+          @Override
+          public void onCancelled(@NonNull DatabaseError databaseError) {
+
+          }
+      });
     }
 }
