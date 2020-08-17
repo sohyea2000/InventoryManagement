@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +20,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
 
 public class MakeRequestActivity extends AppCompatActivity {
-    private EditText employee_id;
+    private TextView employee_id;
     private EditText employee_name;
     private EditText product_name;
 
@@ -34,7 +35,7 @@ public class MakeRequestActivity extends AppCompatActivity {
 
         employee_name = findViewById(R.id.empName);
         product_name = findViewById(R.id.proName);
-
+        employee_id = findViewById(R.id.myId);
         Button requestBtn = findViewById(R.id.make_request_btn);
         requestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
