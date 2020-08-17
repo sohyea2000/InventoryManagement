@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView adminButton = findViewById(R.id.adminButton);
-        Button workButton = findViewById(R.id.workButton);
+        TextView workButton = findViewById(R.id.workButton);
 
 
         //Gets executed when admin uses the app
