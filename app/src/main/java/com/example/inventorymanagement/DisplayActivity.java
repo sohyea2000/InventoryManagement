@@ -105,9 +105,9 @@ public class DisplayActivity extends AppCompatActivity {
         refQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
-                    dataSnapshot1.getRef().removeValue();
-                }
+
+                    dataSnapshot.getRef().removeValue();
+
             }
 
             @Override
