@@ -16,6 +16,5 @@ public class AllRequestActivity extends AppCompatActivity {
         mRequestList = findViewById(R.id.user_request_list);
 
         mRequestList.setHasFixedSize(true);
-        mRequestList.setLayoutManager(new LinearLayoutManager(this));
-    }
+        mRequestList.setLayoutManager(new LinearLayoutManager(this));    }
 }
