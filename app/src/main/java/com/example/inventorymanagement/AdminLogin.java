@@ -33,10 +33,12 @@ public class AdminLogin extends AppCompatActivity {
         adminmail = findViewById(R.id.adminMail);
         adminpass = findViewById(R.id.adminPass);
         //initializing firebase authentication
+
         mAuth = FirebaseAuth.getInstance();
         Button signupButton = findViewById(R.id.createButton);
 
         //Gets executed when a user uses the app for the first time to create an account
+
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +48,7 @@ public class AdminLogin extends AppCompatActivity {
         });
 
         //Gets executed when admin wants to login to the app
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

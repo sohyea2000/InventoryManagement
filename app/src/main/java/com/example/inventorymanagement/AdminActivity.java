@@ -31,7 +31,9 @@ public class AdminActivity extends AppCompatActivity {
         Button viewButton = findViewById(R.id.viewBtn);
         mToolbar = findViewById(R.id.mainAppBar);
         setSupportActionBar(mToolbar);
+
          //Gets executed when admin wants to add new employee
+
         addEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,7 @@ public class AdminActivity extends AppCompatActivity {
         });
         
          //Gets executed when admin wants to add new product
+
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +53,7 @@ public class AdminActivity extends AppCompatActivity {
         });
         
          //Gets executed when admin wants to change the details of the product
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +64,7 @@ public class AdminActivity extends AppCompatActivity {
         });
         
          //Gets executed when admin wants to logout
+
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +76,8 @@ public class AdminActivity extends AppCompatActivity {
 
 
     }
+
+    // ITEMS IN OVERFLOW MENU
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

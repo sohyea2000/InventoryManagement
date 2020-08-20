@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.util.HashMap;
+
 
 public class MakeRequestActivity extends AppCompatActivity {
     private TextView employee_id;
@@ -48,9 +48,7 @@ public class MakeRequestActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(proname)){
                   databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests");
                    databaseReference.push().setValue(proname+ " : "+name);
-                    /*HashMap<String,String> map = new HashMap<>();
-                    map.put(i,proname+ " : "+ name);
-                    databaseReference.setValue(map);*/
+
                     Toast.makeText(MakeRequestActivity.this, "YOUR REQUEST HAS BEEN SENT", Toast.LENGTH_SHORT).show();
                      i= i+1;
                 }
