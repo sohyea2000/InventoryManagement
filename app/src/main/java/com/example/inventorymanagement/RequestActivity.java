@@ -13,21 +13,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 public class RequestActivity extends AppCompatActivity {
 
     private ListView usersList;
     private List<String> users;
     private ArrayAdapter<String> adapter;
-    /*private ListView requestList;
-    private ArrayList<String> requests ;
-    private ArrayAdapter<String> requestAdapter ;*/
+
     private DatabaseReference reference21;
     private DatabaseReference reference22;
    public EmployeeId id ;
@@ -36,8 +34,8 @@ public class RequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
         id = new EmployeeId();
-       // String code = .procode;
-        String empCode = EmployeeId.getEmployeeId();
+
+
         usersList = findViewById(R.id.listRequest);
         users = new ArrayList<>();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
