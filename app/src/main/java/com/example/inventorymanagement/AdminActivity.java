@@ -92,7 +92,7 @@ public class AdminActivity extends AppCompatActivity {
 
                 return true;
             case R.id.get_button:
-                Intent intent1 = new Intent(AdminActivity.this,WelcomeActivty.class);
+                Intent intent1 = new Intent(AdminActivity.this,DisplayActivity.class);
                 startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
