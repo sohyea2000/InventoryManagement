@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 
@@ -80,5 +81,6 @@ public class ProductActivity extends AppCompatActivity {
 
        databaseReference = FirebaseDatabase.getInstance().getReference().child("PRODUCTS");
         databaseReference.push().setValue(product_name + " : " + product_description);
+        Toast.makeText(this, "PRODUCT IS ADDED", Toast.LENGTH_SHORT).show();
     }
 }
