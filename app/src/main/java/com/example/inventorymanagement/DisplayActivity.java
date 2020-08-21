@@ -88,9 +88,7 @@ public class DisplayActivity extends AppCompatActivity {
                String ptime = map.get("DATE OF SUBMISSION");
                time.setText(ptime);
                DatabaseReference myDatabase = FirebaseDatabase.getInstance().getReference().child("USERPRODUCT");
-               HashMap<String,String> map1 = new HashMap<>();
-               map1.put(barcode,pname+" : "+name1);
-               myDatabase.setValue(map1);
+               myDatabase.push().setValue(pname + " : " + name1);
            }
 
            @Override
