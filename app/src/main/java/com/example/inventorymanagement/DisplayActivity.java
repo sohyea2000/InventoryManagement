@@ -98,22 +98,6 @@ public class DisplayActivity extends AppCompatActivity {
 
            }
        });
-       String name2 = empName.getText().toString();
-       String pname2 = name.getText().toString();
-        DatabaseReference mRef2 = FirebaseDatabase.getInstance().getReference();
-        Query refQuery = mRef2.child("Requests").child("autokey").equalTo(pname2+" : "+name2);
-        refQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                    dataSnapshot.getRef().removeValue();
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 }
