@@ -79,9 +79,6 @@ public class ProductActivity extends AppCompatActivity {
         startActivity(in);
 
        databaseReference = FirebaseDatabase.getInstance().getReference().child("PRODUCTS");
-        HashMap<String,String> user = new HashMap<>();
-
-        user.put(str,product_name+" : "+product_description);
-        databaseReference.setValue(user);
+        databaseReference.push().setValue(product_name + " : " + product_description);
     }
 }
